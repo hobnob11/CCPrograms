@@ -21,11 +21,11 @@ setmetatable(Object, {
     __call = function(cls,...)
     local self = setmetatable({}, cls)
     self:_init(...)
+    return self
     end,
 })
 
-function Object._init(x,y,w,h,color,text,textColor)
-    local self = setmetatable({},Object)
+function Object:_init(x,y,w,h,color,text,textColor)
     Elements[index] = self
     self.index = index 
     index = index+1
