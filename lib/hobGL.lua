@@ -1,6 +1,6 @@
 --m = peripheral.find("monitor")
 
-Objects = {}
+Elements = {}
 index = 1
 
 function Render(Term) --pass terminal / monitor to render too
@@ -9,7 +9,7 @@ function Render(Term) --pass terminal / monitor to render too
     Term.clear()
     Term.setCursorBlink(false)
 
-    for _,Obj in Objects do 
+    for _,Obj in Elements do 
         if Obj:getVisable() then 
             Obj:render()
         end
@@ -29,7 +29,7 @@ setmetatable(Object, {
 
 function Object._init(x,y,w,h,color,text,textColor)
     local self = setmetatable({},Object)
-    Objects[index] = self
+    Elements[index] = self
     self.index = index 
     index = index+1
     self.pos = {x=x,y=y}
@@ -55,7 +55,7 @@ function Object:setVisable(bool)
     self.visable = bool
 end
 function Object:remove()
-    Objects[self.index] = nil
+    Elements[self.index] = nil
 end
 
 function Object:getPos()
@@ -71,8 +71,8 @@ function Object:getVisable()
     return self.visable
 end
 
---load all other objects 
-local filepaths = fs.list("lib/objects")
+--load all other Elements 
+local filepaths = fs.list("lib/Elements")
 for _,v in pairs(filepaths) do 
-    dofile("lib/objects/"..v)
+    dofile("lib/Elements/"..v)
 end
