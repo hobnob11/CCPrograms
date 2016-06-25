@@ -10,8 +10,8 @@ setmetatable(TextBox, {
     end,
 })
 
-function TextBox:_init(x,y,w,h,color,text,textColor)
-    Object._init(self,x,y,w,h,color)
+function TextBox:_init(x,y,w,h,text,textColor,backgroundColor)
+    Object._init(self,x,y,w,h,backgroundColor)
     self.text = text and text or nil
     self.textColor = textColor and text or colors.white
 end
