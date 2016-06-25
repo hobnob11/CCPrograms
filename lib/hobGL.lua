@@ -17,7 +17,7 @@ function Render(Term) --pass terminal / monitor to render too
 end
 
 --master object class
-local Object = {}
+Object = {}
 Object.__index = Object
 
 setmetatable(Object, {
