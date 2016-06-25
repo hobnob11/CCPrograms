@@ -13,7 +13,7 @@ function box(box)
         end
     end
     if box.text then
-        local txt = ( #box.text>box.size.x-5 ? string.sub(box.text,1,box.size.x-5).."..." : box.text)
+        local txt = ( #box.text>box.size.x-5 and string.sub(box.text,1,box.size.x-5).."..." or box.text)
         local startx = box.pos.x + math.floor(box.size.x/2 - #txt/2)
         local starty = box.pos.y + math.ceil(box.size.y/2) - 1
         m.setCursorPos(startx,starty)
