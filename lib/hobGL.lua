@@ -6,7 +6,7 @@ function Render(Term) --pass terminal / monitor to render too
     Term.setTextColor(colors.white)
     Term.clear()
     Term.setCursorBlink(false)
-
+    print(Elements)
     for _,Obj in Elements do 
         if Obj:getVisable() then 
             Obj:render()
