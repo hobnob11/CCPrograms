@@ -28,7 +28,7 @@ setmetatable(Object,{
 
 function Object.new(x,y,w,h,color,text,textColor)
     local self = setmetatable({},Object)
-    Objects[index,self]
+    Objects[index] = self
     self.index = index 
     index = index+1
     self.pos = {x=x,y=y}
