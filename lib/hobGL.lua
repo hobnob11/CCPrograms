@@ -28,7 +28,7 @@ function Run(Term,FPS) -- max is 10 (for the cinematic look)
 
     while true do 
         local timer = os.startTimer(delay)
-        local args = {os.pullEvent()}
+        local args = (os.pullEvent())
         if args[1] = timer then 
             Render(Term)
         else

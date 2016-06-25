@@ -19,8 +19,8 @@ function Button:_init(x,y,w,h,color,activeColor)
 end
 
 function Button:hooked(...) -- called when an element that registers itself in the hook table's event gets called
-    local x = {...}[2]
-    local y = {...}[3]
+    local x = (...)[2]
+    local y = (...)[3]
     if x >= self.pos.x and x<= self.pos.x +self.size.x and
             y >= self.pos.y and y<= self.pos.y +self.size.y then 
         self:onButtonPressed(x,y)
