@@ -26,6 +26,9 @@ end
 function TextButton:setTextColor(textColor)
     self.textColor = textColor
 end
+function TextButton:setActiveColor(activeColor)
+    self.activeColor = activeColor
+end
 
 function TextButton:getText()
     return self.text
@@ -33,7 +36,9 @@ end
 function TextButton:getTextColor()
     return self.textColor
 end
-
+function TextButton:getActiveColor()
+    return self.activeColor
+end
 
 function TextButton:hooked(...) -- called when an element that registers itself in the hook table's event gets called
     local x = arg[3]

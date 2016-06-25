@@ -17,7 +17,15 @@ function Button:_init(x,y,w,h,color,activeColor)
     self.hook = "monitor_touch"
     return self
 end
- 
+
+function Button:setActiveColor(activeColor)
+    self.activeColor = activeColor
+end
+
+function Button:getActiveColor()
+    return self.activeColor
+end
+
 function Button:hooked(...) -- called when an element that registers itself in the hook table's event gets called
     local x = arg[3]
     local y = arg[4]
