@@ -9,7 +9,7 @@ function move(side,dist)
     print("move"..side..dist)
     for I = 1,dist do 
         rs.setOutput(side,true)
-        sleep(0.05)
+        sleep(0.1)
         rs.setOutput(side,false)
         sleep(1)
     end
