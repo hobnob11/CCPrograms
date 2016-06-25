@@ -19,4 +19,4 @@ box1 = {}
 box1.pos = {x=5,y=2}
 box1.size = {x=10,y=1}
 
-box(box1,pos,box1.size,colors.red)
+box(box1.pos,box1.size,colors.red)
