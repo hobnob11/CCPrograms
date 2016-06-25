@@ -73,5 +73,5 @@ end
 --load all other objects 
 local filepaths = fs.list("lib/objects")
 for _,v in pairs(filepaths) do 
-    shell.run(v)
+    shell.run("lib/objects/"..v)
 end
