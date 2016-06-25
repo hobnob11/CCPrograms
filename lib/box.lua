@@ -43,26 +43,3 @@ end
 function Box:setTextColor(textColor)
     self.textColor = textColor
 end
-
-
-
---[[
-function box(box)
-    for Y=1,box.size.y do 
-        for X=1,box.size.x do
-            m.setCursorPos(box.pos.x+X-1,box.pos.y+Y-1)
-            m.setTextColor(box.color)
-            m.setBackgroundColor(box.color)
-            m.write(" ")
-        end
-    end
-    if box.text then
-        local txt = ( #box.text>box.size.x-5 and string.sub(box.text,1,box.size.x-5).."..." or box.text)
-        local startx = box.pos.x + math.floor(box.size.x/2 - #txt/2)
-        local starty = box.pos.y + math.ceil(box.size.y/2) - 1
-        m.setCursorPos(startx,starty)
-        m.setTextColor(box.textColor)
-        m.write(txt)
-    end
-end
---]]
