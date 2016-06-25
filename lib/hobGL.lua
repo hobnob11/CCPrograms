@@ -27,7 +27,7 @@ setmetatable(Object, {
     end,
 })
 
-function Object.new(x,y,w,h,color,text,textColor)
+function Object._init(x,y,w,h,color,text,textColor)
     local self = setmetatable({},Object)
     Objects[index] = self
     self.index = index 
