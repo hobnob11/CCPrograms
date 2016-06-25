@@ -19,7 +19,22 @@ function TextButton:_init(x,y,w,h,text,textColor,color,activeColor)
     self.hook = "monitor_touch"
     return self
 end
- 
+
+function TextButton:setText(text)
+    self.text = text
+end
+function TextButton:setTextColor(textColor)
+    self.textColor = textColor
+end
+
+function TextButton:getText()
+    return self.text
+end
+function TextButton:getTextColor()
+    return self.textColor
+end
+
+
 function TextButton:hooked(...) -- called when an element that registers itself in the hook table's event gets called
     local x = arg[3]
     local y = arg[4]
