@@ -16,7 +16,7 @@ end
 
 function Hook(...) -- runs through all elements that have hooks and calls them
     for _,Obj in pairs(Hooks) do 
-        if Obj.hook == {...}[1] then 
+        if Obj.hook == (...)[1] then 
             Obj:hooked(...)
         end
     end
