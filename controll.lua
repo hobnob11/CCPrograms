@@ -7,7 +7,7 @@ function box(pos,size,color)
     for Y=1,size.y do 
         for X=1,size.x do
             print(X,Y)
-            m.setCursorPos(pos.x+size.x-1,pos.y+size.y-1)
+            m.setCursorPos(pos.x+X-1,pos.y+Y-1)
             m.setTextColor(color)
             m.setBackgroundColor(color)
             m.write(" ")
