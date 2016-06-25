@@ -13,7 +13,7 @@ setmetatable(TextButton, {
 function TextButton:_init(x,y,w,h,text,textColor,color,activeColor)
     Object._init(self,x,y,w,h,color)
     Hooks[index] = self
-    self.text = text = text and text or nil
+    self.text = text and text or nil
     self.textColor = textColor and textColor or colors.black
     self.activeColor = activeColor and activeColor or color
     self.hook = "monitor_touch"
