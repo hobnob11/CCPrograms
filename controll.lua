@@ -4,8 +4,8 @@ rednet.open("top")
 blastdoor = rednet.lookup("frames","blastdoor")
 
 function box(pos,size,color)
-    for I=1,size.y do 
-        for I=1,size.x do
+    for Y=1,size.y do 
+        for X=1,size.x do
             m.setCursorPos(pos.x+size.x-1,pos.y+size.y-1)
             m.setTextColor(color)
             m.setBackgroundColor(color)
