@@ -1,5 +1,3 @@
---m = peripheral.find("monitor")
-
 Elements = {}
 index = 1
 
