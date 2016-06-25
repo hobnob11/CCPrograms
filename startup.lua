@@ -6,6 +6,7 @@ rednet.host("frames","blastdoor")
 -- length is 13
 
 function move(side,dist)
+    print("move"..side..dist)
     for I = 1,dist do 
         rs.setOutput(side,true)
         sleep(0.05)
@@ -16,6 +17,7 @@ end
 
 while true do
     sender,msg,dist,protc = rednet.receive("frames")
+    print("rednet"..msg)
     if msg == "open" then
         move("top",13)
     elseif msg == "close" then
