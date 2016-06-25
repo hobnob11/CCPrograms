@@ -1,7 +1,7 @@
 --m = peripheral.find("monitor")
 
-local Objects = {}
-local index = 1
+Objects = {}
+index = 1
 
 function Render(Term) --pass terminal / monitor to render too
     Term.setBackgroundColor(colors.black)
