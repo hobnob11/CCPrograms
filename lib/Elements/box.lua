@@ -14,13 +14,13 @@ function Box:_init(x,y,w,h,color)
     Object._init(self,x,y,w,h,color)
 end
 
-function Box:render()
+function Box:render(Term)
     for Y=1,self.size.y do 
         for X=1,self.size.x do
-            m.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
-            m.setTextColor(self.color)
-            m.setBackgroundColor(self.color)
-            m.write(" ")
+            Term.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
+            Term.setTextColor(self.color)
+            Term.setBackgroundColor(self.color)
+            Term.write(" ")
         end
     end
 end

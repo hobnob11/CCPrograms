@@ -8,7 +8,7 @@ function Render(Term) --pass terminal / monitor to render too
     Term.setCursorBlink(false)
     for _,Obj in pairs(Elements) do 
         if Obj:getVisable() then 
-            Obj:render()
+            Obj:render(Term)
         end
     end
 end
