@@ -1,4 +1,5 @@
 Elements = {}
+Hooks = {}
 index = 1
 
 function Render(Term) --pass terminal / monitor to render too
@@ -12,6 +13,30 @@ function Render(Term) --pass terminal / monitor to render too
         end
     end
 end
+
+function Hook(...) -- runs through all elements that have hooks and calls them
+    for _,Obj in pairs(Hooks) do 
+        if Obj.hook == {...}[1] then 
+            Obj:hooked(...)
+        end
+    end
+end
+
+function Run(Term,FPS) -- max is 10 (for the cinematic look)
+    local delay = FPS and max(1/FPS,0.1) or 0.2
+    local args = {}
+
+    while true do 
+        local timer = os.startTimer(delay)
+        local args = {os.pullEvent()}
+        if args[1] = timer then 
+            Render(Term)
+        else
+            Hook(args)
+        end
+    end
+end
+
 
 --master object class
 Object = {}

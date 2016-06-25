@@ -12,6 +12,7 @@ setmetatable(Box, {
 
 function Box:_init(x,y,w,h,color)
     Object._init(self,x,y,w,h,color)
+    return self
 end
 
 function Box:render(Term)
