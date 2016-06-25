@@ -20,7 +20,7 @@ end
 local Object = {}
 Object.__index = Object
 
-setmetatable(BaseClass, {
+setmetatable(Object, {
     __call = function(cls,...)
     local self = setmetatable({}, cls)
     self:_init(...)
