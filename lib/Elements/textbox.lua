@@ -1,5 +1,5 @@
 TextBox = {}
-Textself.__index = TextBox
+TextBox.__index = TextBox
 
 setmetatable(TextBox, {
     __index = Object, -- this makes TextBox inherited from object
@@ -12,8 +12,8 @@ setmetatable(TextBox, {
 
 function TextBox:_init(x,y,w,h,color,text,textColor)
     Object._init(self,x,y,w,h,color)
-    self.text = text
-    self.textColor = textColor
+    self.text = text and text or nil
+    self.textColor = textColor and text or colors.white
 end
 
 function TextBox:setText(text)
