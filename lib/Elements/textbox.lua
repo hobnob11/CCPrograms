@@ -43,8 +43,8 @@ function TextBox:render(Term)
         local txt = ( #self.text>self.size.x-5 and string.sub(self.text,1,self.size.x-5).."..." or self.text)
         local startx = self.pos.x + math.floor(self.size.x/2 - #txt/2)
         local starty = self.pos.y + math.ceil(self.size.y/2) - 1
-        m.setCursorPos(startx,starty)
-        m.setTextColor(self.textColor)
-        m.write(txt)
+        Term.setCursorPos(startx,starty)
+        Term.setTextColor(self.textColor)
+        Term.write(txt)
     end
 end
