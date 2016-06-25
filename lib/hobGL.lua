@@ -21,6 +21,7 @@ setmetatable(Object, {
     __call = function(cls,...)
     local self = setmetatable({}, cls)
     self:_init(...)
+    return self
     end,
 })
 
