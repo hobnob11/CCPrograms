@@ -1,3 +1,4 @@
-shell.run("gitget.lua","hobnob11 CCPrograms")
-shell.run("rm","startup")
-shell.run("mv","startup.lua startup")
+shell.run("gitget.lua","hobnob11 CCPrograms")-- pull repo
+
+shell.run("rm","box") -- change box.lua into box so that VSCode still thinks its a lua file but i dont have to use box.lua every time
+shell.run("mv","lib/box.lua lib/box")

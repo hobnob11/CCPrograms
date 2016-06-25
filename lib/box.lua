@@ -1,4 +1,4 @@
-m = peripheral.find("monitor")
+--m = peripheral.find("monitor")
 
 Box = {}
 Box.__index = Box
@@ -11,10 +11,8 @@ setmetatable(Box,{
 
 function Box.new(x,y,w,h,color,text,textColor)
     local self = setmetatable({},Box)
-    self.pos.x = x
-    self.pos.y = y
-    self.size.x = w
-    self.size.y = h
+    self.pos = {x=x,y=y}
+    self.size = {x=w,y=h}
     self.color = color and color or colors.white
     self.text = text and text or nil
     self.textColor = textColor and textColor or colors.black
