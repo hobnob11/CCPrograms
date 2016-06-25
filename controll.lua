@@ -22,12 +22,12 @@ function box(box)
     end
 end
 
+m.setBackgroundColor(colors.black)
 m.clear()
 
 box1 = {pos={x=5,y=2},size={x=10,y=1},color=colors.red}
-
 box(box1)
 
-box2 = {pos={x=5,y=2},size={x=10,y=1},color=colors.blue,text="heh",textColor=colors.white}
-
+box2 = {pos={x=5,y=2},size={x=10,y=1},color=colors.blue,text="heheh",textColor=colors.white}
 box(box2)
+
