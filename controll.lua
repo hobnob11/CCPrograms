@@ -19,6 +19,7 @@ function box(box)
         m.setCursorPos(startx,starty)
         m.setTextColor(box.textColor)
         m.write(txt)
+    end
 end
 
 m.clear()
