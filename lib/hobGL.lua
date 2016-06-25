@@ -23,7 +23,7 @@ function Hook(...) -- runs through all elements that have hooks and calls them
 end
 
 function Run(Term,FPS) -- max is 10 (for the cinematic look)
-    local delay = FPS and max(1/FPS,0.1) or 0.2
+    local delay = FPS and math.max(1/FPS,0.1) or 0.2
     local args = {}
 
     while true do 
