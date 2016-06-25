@@ -32,7 +32,7 @@ function Object._init(x,y,w,h,color,text,textColor)
     self.pos = {x=x,y=y}
     self.size = {x=w,y=h}
     self.color = color and color or colors.white
-    self.visible = true
+    self.visable = true
     return self
 end
 
