@@ -1,4 +1,4 @@
 shell.run("gitget.lua","hobnob11 CCPrograms")-- pull repo
 
-shell.run("rm","lib/box") -- change box.lua into box so that VSCode still thinks its a lua file but i dont have to use box.lua every time
-shell.run("mv","lib/box.lua lib/box")
+shell.run("rm","lib/hobGL") -- change hobGL.lua into bohobGL so that VSCode still thinks its a lua file but i dont have to use hobGL.lua every time
+shell.run("mv","lib/hobGL.lua lib/hobGL")
