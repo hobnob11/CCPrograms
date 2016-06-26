@@ -15,6 +15,7 @@ function Button:_init(x,y,w,h,color,activeColor)
     Hooks[index] = self
     self.activeColor = activeColor and activeColor or color
     self.hook = "monitor_touch"
+    self.activated = 0
     return self
 end
 
