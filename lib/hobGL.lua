@@ -43,9 +43,7 @@ Object = {}
 Object.__index = Object
  
 setmetatable(Object, {
-    __newindex = function()
-        update = true
-    end,
+    __newindex = function() update = true end,
     __call = function(cls,...)
     local self = setmetatable({}, cls)
     self:_init(...)
