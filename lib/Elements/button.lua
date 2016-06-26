@@ -32,7 +32,7 @@ function Button:hooked(...) -- called when an element that registers itself in t
     if x >= self.pos.x and x<= self.pos.x +self.size.x and
             y >= self.pos.y and y<= self.pos.y +self.size.y then
         self:onButtonPressed(x,y)
-        self.activated = true
+        self.activated = 5
         return true
     else
         return false
@@ -50,7 +50,7 @@ end
  
  
 function Button:render(Term)
-    local color = self.activated and self.activeColor or self.color
+    local color = self.activated>0 and self.activeColor or self.color
     for Y=1,self.size.y do
         for X=1,self.size.x do
             Term.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
@@ -59,5 +59,5 @@ function Button:render(Term)
             Term.write(" ")
         end
     end
-    self.activated = false
+    self.activated = self.activated>0 and self.activated - 1 or 0
 end
