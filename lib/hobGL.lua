@@ -1,7 +1,7 @@
 Elements = {}
 Hooks = {}
 index = 1
- 
+update = false
 function Render(Term) --pass terminal / monitor to render too
     Term.setBackgroundColor(colors.black)
     Term.setTextColor(colors.white)
@@ -30,7 +30,7 @@ function Run(Term,FPS) -- max is 10 (for the cinematic look)
         local timer = os.startTimer(delay)
         local args = {os.pullEvent()}
         if args[1] == "timer" then
-            Render(Term)
+            if update then update = false Render(Term) end
         else
             Hook(unpack(args))
         end
@@ -43,6 +43,9 @@ Object = {}
 Object.__index = Object
  
 setmetatable(Object, {
+    __newindex = function()
+        update = true
+    end,
     __call = function(cls,...)
     local self = setmetatable({}, cls)
     self:_init(...)
@@ -78,6 +81,8 @@ function Object:setVisable(bool)
 end
 function Object:remove()
     Elements[self.index] = nil
+    Hooks[self.index] = nil 
+    self = nil --this is where vars being like pointers and not actual vars gets confusing, will this change the users var for the object to nil?
 end
  
 function Object:getPos()
