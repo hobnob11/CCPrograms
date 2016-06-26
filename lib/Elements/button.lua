@@ -52,6 +52,7 @@ end
  
 function Button:render(Term)
     local color = self.activated>0 and self.activeColor or self.color
+    print("color:",color," activ:",self.activated)
     for Y=1,self.size.y do
         for X=1,self.size.x do
             Term.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
