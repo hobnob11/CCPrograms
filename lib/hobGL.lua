@@ -44,7 +44,7 @@ Object.__index = Object
  
 setmetatable(Object, {
     __newindex = function(tbl,k,v)
-        rawset(tbl,k,b)
+        rawset(tbl,k,v)
         update = true 
     end,
     __call = function(cls,...)
