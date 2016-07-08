@@ -33,10 +33,7 @@ function DrawLine(obj,Term, x1, y1, x2, y2)
     
     local x, y = x1, y1
     while(true) do
-        Term.setCursorPos(x,y)
-        Term.setTextColor(obj.color)
-        Term.setBackgroundColor(obj.color)
-        Term.write(" ")
+        dot(Term,x,y,obj.color)
         
         if x == x2 and y == y2 then break end
         e2 = err

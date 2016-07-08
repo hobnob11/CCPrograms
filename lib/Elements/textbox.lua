@@ -34,10 +34,7 @@ end
 function TextBox:render(Term)
     for Y=1,self.size.y do 
         for X=1,self.size.x do
-            Term.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
-            Term.setTextColor(self.color)
-            Term.setBackgroundColor(self.color)
-            Term.write(" ")
+            dot(Term,self.pos.x+X-1,self.pos.y+Y-1,self.color)
         end
     end
     if self.text then

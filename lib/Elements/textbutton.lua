@@ -67,10 +67,7 @@ function TextButton:render(Term)
     local color = self.activated and self.activeColor or self.color
     for Y=1,self.size.y do
         for X=1,self.size.x do
-            Term.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
-            Term.setTextColor(color)
-            Term.setBackgroundColor(color)
-            Term.write(" ")
+            dot(Term,self.pos.x+X-1,self.pos.y+Y-1,color)
         end
     end
     if self.text then

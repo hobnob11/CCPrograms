@@ -55,10 +55,7 @@ function Button:render(Term)
     print("color:",color," activ:",self.activated)
     for Y=1,self.size.y do
         for X=1,self.size.x do
-            Term.setCursorPos(self.pos.x+X-1,self.pos.y+Y-1)
-            Term.setTextColor(color)
-            Term.setBackgroundColor(color)
-            Term.write(" ")
+            dot(Term,self.pos.x+X-1,self.pos.y+Y-1,color)
         end
     end
     self.activated = self.activated>0 and self.activated - 1 or 0
