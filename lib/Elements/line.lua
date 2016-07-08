@@ -16,24 +16,42 @@ function Line:_init(x,y,x2,y2,color)
     return self
 end
 
+--emergency brandon function 
+function DrawLine(x1, y1, x2, y2)
+    local dx = math.abs(x1-x2)
+    local sx = (x1 < x2) and 1 or -1
+    local dy = math.abs(y1-y2)
+    local sy = (y1 < y2) and 1 or -1
+    local err = ((dx > dy) and dx or -dy) / 2
+    local e2
+    
+    local x, y = x1, y1
+    while(true)
+        Term.setCursorPos(x,y)
+        Term.setTextColor(self.color)
+        Term.setBackgroundColor(self.color)
+        Term.write(" ")
+        
+        if x == x2 and y == y2 then break end
+        e2 = err
+        
+        if e2 > -dx then
+            err = err - dy
+            x = x + sx
+        end
+        
+        if e2 < dy then
+            err = err + dx
+            y = y + sy
+        end
+    end
+end
+
 function Line:render(Term)
     local x1 = self.pos.x
     local x2 = self.pos2.x
     local y1 = self.pos.y
     local y2 = self.pos2.y
-
-    local len = math.floor(math.sqrt(((x2-x1) ^ 2) + ((y1+y2) ^ 2)))
-
-    local ix = (x2 - x1) / len
-    local iy = (y2 - y1) / len
-
-    for I = 1,len do 
-        local ax = math.floor(x1 + ix*I)
-        local ay = math.floor(y1 + iy*I)
-
-        Term.setCursorPos(ax,ay)
-        Term.setTextColor(self.color)
-        Term.setBackgroundColor(self.color)
-        Term.write(" ")
-    end
+    
+    DrawLine(x1,y1,x2,y2)
 end
