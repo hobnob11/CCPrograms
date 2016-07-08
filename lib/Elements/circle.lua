@@ -83,7 +83,7 @@ function Circle:render(Term)
         for X=uhhx1-5,uhhx2+5 do
             if dst(X,Y,self.pos.x,self.pos.y,self.shapefactor) < self.radius
             then
-                if (self.pie == nil) or ((self.pie.start < self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) < self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) < self.pie.start)) or ((self.pie.start > self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) > self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) > self.pie.start))
+                if (self.pie == nil) or ((self.pie.start < self.pie.stop) and (bre(self.pos.x,self.pos.y,X,Y) < self.pie.stop) and (bre(self.pos.x,self.pos.y,X,Y) < self.pie.start)) or ((self.pie.start > self.pie.stop) and (bre(self.pos.x,self.pos.y,X,Y) > self.pie.stop) and (bre(self.pos.x,self.pos.y,X,Y) > self.pie.start))
                 then
                     dot(Term,X,Y,self.color)
                 end
