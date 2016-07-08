@@ -12,7 +12,7 @@ setmetatable(Circle, {
 
 --gasp this is strange too, replaces size with radius, and has start and end angles for pie mode
 function Circle:_init(x,y,radius,color,startang,endang)
-    Object._init(self,x,y,nil,nil,color)
+    Object._init(self,x,y,radius*2,radius*2,color)
     self.radius = radius
     self.pie = startang and {start=startang,stop=endang} or nil -- if self.pie then piemode
     return self
