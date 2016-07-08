@@ -16,6 +16,12 @@ function Line:_init(x,y,x2,y2,color)
     return self
 end
 
+function Line:setPos2(x,y)
+    self.pos2.x = x
+    self.pos2.y = y
+end
+
+
 --emergency brandon function 
 function DrawLine(obj,Term, x1, y1, x2, y2)
     local dx = math.abs(x1-x2)
