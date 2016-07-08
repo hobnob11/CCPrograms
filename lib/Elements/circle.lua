@@ -53,8 +53,8 @@ function Circle:render(Term)
     
     --for Y=1+self.pos.y,self.size.y+self.pos.y do 
         --for X=1+self.pos.x,self.size.x+self.pos.x do
-    for Y=uhhy1,uhhy2 do 
-        for X=uhhx1,uhhx2 do
+    for Y=uhhy1-5,uhhy2+5 do 
+        for X=uhhx1-5,uhhx2+5 do
             if dst(X,Y,self.pos.x,self.pos.y,self.shapefactor) < self.radius
             then
                 dot(Term,X,Y,self.color)
