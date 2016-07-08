@@ -12,7 +12,7 @@ setmetatable(Line, {
 --Diffrent from most other objects, takes two positions.  
 function Line:_init(x,y,x2,y2,color)
     Object._init(self,x,y,nil,nil,color)
-    self.pos2 = {x2,y2}
+    self.pos2 = {x=x2,y=y2}
     return self
 end
 
