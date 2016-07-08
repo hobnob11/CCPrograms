@@ -26,8 +26,8 @@ function Line:render(Term)
     local ang = math.atan((y2-y1)/(x2-x1)) *180 / math.pi
     
     for I = 1,len do 
-        local ax = math.floor(math.cos(ang) * I)
-        local ay = math.floor(math.sin(ang) * I)
+        local ax = x1 + -math.floor(math.cos(ang) * I)
+        local ay = y1 + math.floor(math.sin(ang) * I)
 
         Term.setCursorPos(ax,ay)
         Term.setTextColor(self.color)
