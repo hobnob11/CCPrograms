@@ -11,9 +11,10 @@ setmetatable(Circle, {
 })
 
 --gasp this is strange too, replaces size with radius, and has start and end angles for pie mode
-function Circle:_init(x,y,radius,color,startang,endang)
+function Circle:_init(x,y,radius,color,shapefactor,startang,endang)
     Object._init(self,x,y,radius*2,radius*2,color)
     self.radius = radius
+    self.shapefactor = shapefactor and shapefactor or 1
     self.pie = startang and {start=startang,stop=endang} or nil -- if self.pie then piemode
     return self
 end
@@ -22,8 +23,8 @@ function pnrg(heh)
     return (heh < 0) and -heh or heh
 end
 
-function dst(heh1x,heh1y,heh2x,heh2y)
-    return math.sqrt((pnrg(heh1x-heh2x)^2)+(pnrg(heh1y-heh2y)^2))
+function dst(heh1x,heh1y,heh2x,heh2y,sf)
+    return math.sqrt(((pnrg(heh1x-heh2x)^2)*(1/sf))+((pnrg(heh1y-heh2y)^2)*sf))
 end
 
 function Circle:render(Term)
@@ -40,19 +41,19 @@ function Circle:render(Term)
     print(uhhy1,"a",uhhy2)
     
     --background of magic
-    for Y=uhhy1,uhhy2 do 
-        for X=uhhx1,uhhx2 do
-            dot(Term,X-1,Y-1,colors.blue)
-        end
-    end
+    --for Y=uhhy1,uhhy2 do 
+    --    for X=uhhx1,uhhx2 do
+    --        dot(Term,X-1,Y-1,colors.blue)
+    --    end
+    --end
     
     --for Y=1+self.pos.y,self.size.y+self.pos.y do 
         --for X=1+self.pos.x,self.size.x+self.pos.x do
     for Y=uhhy1,uhhy2 do 
         for X=uhhx1,uhhx2 do
-            if dst(X,Y,self.pos.x,self.pos.y) < self.radius
+            if dst(X,Y,self.pos.x,self.pos.y,self.shapefactor) < self.radius
             then
-                dot(Term,X-1,Y-1,self.color)
+                dot(Term,X,Y,self.color)
             end
         end
     end
