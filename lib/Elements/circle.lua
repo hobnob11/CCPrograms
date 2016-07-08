@@ -35,13 +35,24 @@ function Circle:render(Term)
     
     uhhx1 = (1+self.pos.x)-(self.size.x/2)
     uhhx2 = uhhx1 + self.size.x
+    
+    print(uhhx1,"a",uhhx2)
+    print(uhhy1,"a",uhhy2)
+    
+    --background of magic
+    for Y=uhhy1,uhhy2 do 
+        for X=uhhx1,uhhx2 do
+            dot(Term,X-1,Y-1,colors.blue)
+        end
+    end
+    
     --for Y=1+self.pos.y,self.size.y+self.pos.y do 
         --for X=1+self.pos.x,self.size.x+self.pos.x do
     for Y=uhhy1,uhhy2 do 
         for X=uhhx1,uhhx2 do
             if dst(X,Y,self.pos.x,self.pos.y) < self.radius
             then
-                dot(Term,self.pos.x+X-1,self.pos.y+Y-1,self.color)
+                dot(Term,X-1,Y-1,self.color)
             end
         end
     end
