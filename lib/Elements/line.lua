@@ -23,7 +23,7 @@ function Line:render(Term)
     local y2 = self.pos2.y
 
     local len = math.sqrt(((x2-x1) ^ 2) + ((y1+y2) ^ 2))
-    local ang = math.tan((y2-y1) / (x2-x1))
+    local ang = math.atan((y2-y1)/(x2-x1)) *180 / math.pi
     
     for I = 1,len do 
         local ax = math.floor(math.cos(ang) * I)
