@@ -22,12 +22,14 @@ function Line:render(Term)
     local y1 = self.pos.y
     local y2 = self.pos2.y
 
-    local len = math.sqrt(((x2-x1) ^ 2) + ((y1+y2) ^ 2))
-    local ang = math.atan((y2-y1)/(x2-x1)) *180 / math.pi
-    
+    local len = math.floor(math.sqrt(((x2-x1) ^ 2) + ((y1+y2) ^ 2)))
+
+    local ix = (x2 - x1) / len
+    local iy = (y2 - y1) / len
+
     for I = 1,len do 
-        local ax = x1 + -math.floor(math.cos(ang) * I)
-        local ay = y1 + math.floor(math.sin(ang) * I)
+        local ax = math.floor(x1 + ix*I)
+        local ay = math.floor(y1 + iy*I)
 
         Term.setCursorPos(ax,ay)
         Term.setTextColor(self.color)
