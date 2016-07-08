@@ -40,12 +40,11 @@ end
 --some functions for less copypasta! gasp!
 --dot(Term,x,y,color)
 function dot(Term,x,y,color)
-{
     Term.setCursorPos(x,y)
     Term.setTextColor(color)
     Term.setBackgroundColor(color)
     Term.write(" ")
-}
+end
 
  
 --master object class
