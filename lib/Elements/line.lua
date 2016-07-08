@@ -17,7 +17,7 @@ function Line:_init(x,y,x2,y2,color)
 end
 
 --emergency brandon function 
-function DrawLine(Term, x1, y1, x2, y2)
+function DrawLine(obj,Term, x1, y1, x2, y2)
     local dx = math.abs(x1-x2)
     local sx = (x1 < x2) and 1 or -1
     local dy = math.abs(y1-y2)
@@ -28,8 +28,8 @@ function DrawLine(Term, x1, y1, x2, y2)
     local x, y = x1, y1
     while(true) do
         Term.setCursorPos(x,y)
-        Term.setTextColor(self.color)
-        Term.setBackgroundColor(self.color)
+        Term.setTextColor(obj.color)
+        Term.setBackgroundColor(obj.color)
         Term.write(" ")
         
         if x == x2 and y == y2 then break end
@@ -53,5 +53,5 @@ function Line:render(Term)
     local y1 = self.pos.y
     local y2 = self.pos2.y
 
-    DrawLine(Term,x1,y1,x2,y2)
+    DrawLine(obj,Term,x1,y1,x2,y2)
 end
