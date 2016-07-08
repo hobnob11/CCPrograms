@@ -24,6 +24,7 @@ end
 
 function dst(heh1x,heh1y,heh2x,heh2y)
     return math.sqrt((pnrg(heh1x-heh2x)^2)+(pnrg(heh1y-heh2y)^2))
+end
 
 function Circle:render(Term)
     --INSERT PAF MAGIC HERE
@@ -37,5 +38,4 @@ function Circle:render(Term)
             end
         end
     end
-end
 end
