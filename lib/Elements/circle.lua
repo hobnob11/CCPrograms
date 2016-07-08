@@ -30,8 +30,8 @@ function Circle:render(Term)
     --INSERT PAF MAGIC HERE
     --k
     --https://www.youtube.com/watch?v=Xx-yryFIB6E
-    for Y=1,self.size.y do 
-        for X=1,self.size.x do
+    for Y=1+self.pos.y,self.size.y+self.pos.y do 
+        for X=1+self.pos.x,self.size.x+self.pos.x do
             if dst(X,Y,self.pos.x,self.pos.y) < self.radius
             then
                 dot(Term,self.pos.x+X-1,self.pos.y+Y-1,self.color)
