@@ -27,6 +27,32 @@ function clmp(heh)
     return (heh > 1) and 1 or heh
 end
 
+function bre(x1,y1,x2,y2)
+    dx = pnrg(x1-x2)
+    dy = pnrg(y1-y2)
+    if dx == 0 and dy >= 0
+    then
+        return 0
+    end
+    if dx == 0 and dy < 0
+    then
+        return 180
+    end
+    
+    if dx > 0
+    then
+        return math.deg(math.atan(dx/dy))
+    end
+    
+    if dx < 0
+    then
+        return math.deg(math.atan(dx/dy)) + 360
+    end
+    
+    return 0 --i dont even
+        
+end
+
 function dst(heh1x,heh1y,heh2x,heh2y,sf)
     return math.sqrt(((pnrg(heh1x-heh2x)^2)*clmp(1/sf))+((pnrg(heh1y-heh2y)^2)*clmp(sf)))
 end
@@ -57,7 +83,10 @@ function Circle:render(Term)
         for X=uhhx1-5,uhhx2+5 do
             if dst(X,Y,self.pos.x,self.pos.y,self.shapefactor) < self.radius
             then
-                dot(Term,X,Y,self.color)
+                if (self.pie == nil) or ((self.pie.start < self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) < self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) < self.pie.start)) or ((self.pie.start > self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) > self.pie.stop) and (self.bre(self.pos.x,self.pos.y,X,Y) > self.pie.start))
+                then
+                    dot(Term,X,Y,self.color)
+                end
             end
         end
     end
