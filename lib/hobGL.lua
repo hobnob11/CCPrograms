@@ -36,7 +36,17 @@ function Run(Term,FPS) -- max is 10 (for the cinematic look)
         end
     end
 end
- 
+
+--some functions for less copypasta! gasp!
+--dot(Term,x,y,color)
+function dot(Term,x,y,color)
+{
+    Term.setCursorPos(x,y)
+    Term.setTextColor(color)
+    Term.setBackgroundColor(color)
+    Term.write(" ")
+}
+
  
 --master object class
 Object = {}
@@ -98,7 +108,7 @@ end
 function Object:getVisable()
     return self.visable
 end
- 
+
 --load all other Elements
 local filepaths = fs.list("lib/Elements")
 for _,v in pairs(filepaths) do
