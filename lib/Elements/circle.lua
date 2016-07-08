@@ -23,8 +23,12 @@ function pnrg(heh)
     return (heh < 0) and -heh or heh
 end
 
+function clmp(heh)
+    return (heh > 1) and 1 or heh
+end
+
 function dst(heh1x,heh1y,heh2x,heh2y,sf)
-    return math.sqrt(((pnrg(heh1x-heh2x)^2)*(1/sf))+((pnrg(heh1y-heh2y)^2)*sf))
+    return math.sqrt(((pnrg(heh1x-heh2x)^2)*clmp(1/sf))+((pnrg(heh1y-heh2y)^2)*clmp(sf)))
 end
 
 function Circle:render(Term)
