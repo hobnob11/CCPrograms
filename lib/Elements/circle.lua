@@ -38,3 +38,4 @@ function Circle:render(Term)
         end
     end
 end
+end
