@@ -14,7 +14,7 @@ setmetatable(Circle, {
 function Circle:_init(x,y,radius,color,startang,endang)
     Object._init(self,x,y,nil,nil,color)
     self.radius = radius
-    self.pie = startang and {start=startang,end=endang} or nil -- if self.pie then piemode
+    self.pie = startang and {start=startang,stop=endang} or nil -- if self.pie then piemode
     return self
 end
 
