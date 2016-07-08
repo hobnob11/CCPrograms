@@ -53,5 +53,5 @@ function Line:render(Term)
     local y1 = self.pos.y
     local y2 = self.pos2.y
 
-    DrawLine(obj,Term,x1,y1,x2,y2)
+    DrawLine(self,Term,x1,y1,x2,y2)
 end
